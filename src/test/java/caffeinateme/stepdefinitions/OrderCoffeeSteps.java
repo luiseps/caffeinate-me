@@ -1,6 +1,5 @@
 package caffeinateme.stepdefinitions;
 
-
 import caffeinateme.Barista;
 import caffeinateme.Customer;
 import cucumber.api.java.en.Given;
@@ -33,7 +32,7 @@ public class OrderCoffeeSteps {
 
     @Then("Barry should receive the order")
     public void barry_should_receive_the_order() {
-       barry.shoulHaveAPendingOrderFor(cathysOrder);
+       barry.shouldHaveAPendingOrderFor(cathysOrder);
     }
 
     @Then("Barry should know that the coffee order is Urgent")
