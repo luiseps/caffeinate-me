@@ -24,7 +24,7 @@ public class OrderCoffeeSteps {
 
     String cathysOrder;
 
-    @Given("(.*) is (\\d+) meters? from the coffe shop")
+    @Given("(.*) is (\\d+) meters? from the coffee shop")
     public void cathy_is_meters_from_the_coffe_shop(String name, int distanceInMeters) {
         cathy.notifyDistanceFromShop(distanceInMeters);
     }
@@ -58,7 +58,7 @@ public class OrderCoffeeSteps {
         orderReceipt = cathy.placesAnOrderFor(1, order);
     }
 
-    @Then("^Barry should receive the cofee order$")
+    @Then("^Barry should receive the coffee order$")
     public void barry_should_receive_the_cofee_order() throws Exception {
         MatcherAssert.assertThat(barry.pendingOrders(),  Matchers.hasItem(Order.matching(orderReceipt)));
     }
