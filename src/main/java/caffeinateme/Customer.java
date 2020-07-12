@@ -26,15 +26,8 @@ public class Customer extends ScenarioActor {
         return coffeeOrders.placeOrders(customerId, quantity, product);
     }
 
-
-
-    @Step("Notify caffeinate me that the customer is {0} from the shop")
-    public void notifyDistanceFromShop(int distanceFromShop) {
-        this.distanceFromShop = distanceFromShop;
-    }
-
-    @Step("#actor places order for {0}")
-    public void placesOrderFor(String order){
-
+    @Step("#actor updates her ETA to {0}")
+    public void updatesHerETATo(int minutesAway) {
+        coffeeOrders.updateCustomerEta(customerId,minutesAway);
     }
 }
