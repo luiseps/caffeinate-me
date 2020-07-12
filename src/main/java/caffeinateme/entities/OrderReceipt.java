@@ -1,4 +1,4 @@
-package caffeinateme;
+package caffeinateme.entities;
 
 import java.util.Objects;
 

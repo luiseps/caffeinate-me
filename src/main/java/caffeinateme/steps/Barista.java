@@ -1,5 +1,6 @@
-package caffeinateme;
+package caffeinateme.steps;
 
+import caffeinateme.entities.Order;
 import net.serenitybdd.core.steps.ScenarioActor;
 import net.thucydides.core.annotations.Steps;
 

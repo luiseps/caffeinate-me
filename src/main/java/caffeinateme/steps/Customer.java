@@ -1,5 +1,7 @@
-package caffeinateme;
+package caffeinateme.steps;
 
+import caffeinateme.entities.OrderReceipt;
+import caffeinateme.entities.Receipt;
 import net.serenitybdd.core.steps.ScenarioActor;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
@@ -7,8 +9,6 @@ import net.thucydides.core.annotations.Steps;
 public class Customer extends ScenarioActor {
 
     private long customerId;
-    private int distanceFromShop;
-
 
     @Steps(shared = true)
     CoffeeOrdersClient coffeeOrders;
@@ -29,5 +29,9 @@ public class Customer extends ScenarioActor {
     @Step("#actor updates her ETA to {0}")
     public void updatesHerETATo(int minutesAway) {
         coffeeOrders.updateCustomerEta(customerId,minutesAway);
+    }
+
+    public Receipt requestAReceipt() {
+        return coffeeOrders.getReceiptFor(customerId);
     }
 }

@@ -1,4 +1,6 @@
-package caffeinateme;
+package caffeinateme.entities;
+
+import caffeinateme.enums.Urgency;
 
 import java.util.Objects;
 

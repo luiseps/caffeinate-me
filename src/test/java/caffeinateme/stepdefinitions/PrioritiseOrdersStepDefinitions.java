@@ -1,6 +1,10 @@
 package caffeinateme.stepdefinitions;
 
-import caffeinateme.*;
+import caffeinateme.entities.Order;
+import caffeinateme.entities.OrderReceipt;
+import caffeinateme.enums.Urgency;
+import caffeinateme.steps.Barista;
+import caffeinateme.steps.Customer;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;

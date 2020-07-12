@@ -1,11 +1,12 @@
 package caffeinateme.stepdefinitions;
 
-import caffeinateme.Customer;
-import caffeinateme.UserRegistrationClient;
+import caffeinateme.steps.Customer;
+import caffeinateme.steps.UserRegistrationClient;
 import cucumber.api.java.en.Given;
 import net.thucydides.core.annotations.Steps;
 
 public class UserRegistrationStepDefinitions {
+
 
     @Steps
     UserRegistrationClient userRegistration;
