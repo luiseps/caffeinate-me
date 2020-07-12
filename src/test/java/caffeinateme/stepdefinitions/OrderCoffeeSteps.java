@@ -6,6 +6,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 
 import static  org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertThat;
@@ -36,12 +37,12 @@ public class OrderCoffeeSteps {
 
     @Then("Barry should receive the order")
     public void barry_should_receive_the_order() {
-       barry.shouldHaveAPendingOrderFor(cathysOrder);
+        barry.shouldHaveAPendingOrderFor(cathysOrder);
     }
 
     @Then("Barry should know that the coffee order is Urgent")
     public void barry_should_know_that_the_coffee_order_is_Urgent() {
-       assertThat(barry.getUrgentOrders(), hasItem(cathysOrder));
+        assertThat(barry.getUrgentOrders(), hasItem(cathysOrder));
     }
 
 
@@ -59,6 +60,6 @@ public class OrderCoffeeSteps {
 
     @Then("^Barry should receive the cofee order$")
     public void barry_should_receive_the_cofee_order() throws Exception {
-        MatcherAssert.assertThat(barry.pendingOrders(),  hasItem(Order.matching(orderReceipt)));
+        MatcherAssert.assertThat(barry.pendingOrders(),  Matchers.hasItem(Order.matching(orderReceipt)));
     }
 }

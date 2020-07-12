@@ -1,15 +1,23 @@
 package caffeinateme;
 
+import net.serenitybdd.core.steps.ScenarioActor;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.hasItem;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.hasItem;
 
+public class Barista extends ScenarioActor {
 
-public class Barista {
+    @Steps(shared = true)
+    CoffeeOrdersClient coffeeOrders;
+
+    public List<Order> pendingOrders() {
+        return coffeeOrders.getOrders();
+    }
 
     public List<String> getUrgentOrders() {
         List<String> results = new ArrayList<>();
@@ -23,7 +31,7 @@ public class Barista {
         return results;
     }
     @Step
-    public void shoulHaveAPendingOrderFor(String someOrder) {
+    public void shouldHaveAPendingOrderFor(String someOrder) {
         assertThat(getPendingOrders(), hasItem(someOrder));
     }
 }

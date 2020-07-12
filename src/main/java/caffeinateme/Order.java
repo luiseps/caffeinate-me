@@ -1,7 +1,5 @@
 package caffeinateme;
 
-import org.hamcrest.Matcher;
-
 import java.util.Objects;
 
 public class Order {
