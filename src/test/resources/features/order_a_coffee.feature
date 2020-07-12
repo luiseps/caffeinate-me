@@ -1,4 +1,4 @@
-Feature: Order a coffee
+Feature: Order a coffee as user registered
 
   In order to save time when I pick up my morning coffee
   As a coffee lover
@@ -9,4 +9,9 @@ Feature: Order a coffee
     When Cathy order a large cappuccino
     Then Barry should receive the order
     And Barry should know that the coffee order is Urgent
+
+  Scenario: Buyer orders a coffee
+    Given Cathy has a Caffeinate-Me account
+    When she orders a large cappuccino
+    Then Barry should receive the cofee order
 
