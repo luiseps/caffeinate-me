@@ -54,6 +54,12 @@ test {
     systemProperties System.getProperties()
 }
 
+subprojects {
+    tasks.withType(Test) {
+        maxParallelForks = Runtime.runtime.availableProcessors()
+    }
+}
+
 gradle.startParameter.continueOnFailure = true
 
 test.finalizedBy(aggregate)
